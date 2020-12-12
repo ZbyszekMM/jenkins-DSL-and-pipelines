@@ -16,7 +16,7 @@ job('minimal-NodeJS-into-container-example') {
         dockerBuildAndPublish {
             repositoryName('zbyszekm/minimal-nodejs-app')
             tag('${GIT_REVISION,length=9}')
-            registryCredentials('dockerhub')
+            registryCredentials('dockerhub')  // to wywoła prośbę o dodanie nowych lub użycie credentials 
             forcePull(false)
             forceTag(false)
             createFingerprints(false)

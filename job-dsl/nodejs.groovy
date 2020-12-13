@@ -1,4 +1,4 @@
-job('minimal-NodeJS-no-container') {
+job('minimal-NodeJS-DSL') {
     scm {
         git('git://github.com/ZbyszekMM/minimal-nodejs-app.git') {  node -> // is hudson.plugins.git.GitSCM
             node / gitConfigName('DSL User')

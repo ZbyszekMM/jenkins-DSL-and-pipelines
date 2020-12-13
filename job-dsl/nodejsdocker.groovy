@@ -16,7 +16,7 @@ job('minimal-NodeJS-container-DSL') {
         dockerBuildAndPublish {
             repositoryName('zbyszekm/minimal-nodejs-app')
             tag('${GIT_REVISION,length=9}')
-            registryCredentials('dockerhub')  // to wywoła prośbę o dodanie nowych lub użycie credentials 
+            registryCredentials('dockerhub')  // to wywoła prośbę o dodanie nowych lub użycie credentials - ich id to 'dockerhub', tak są nazwane w Jenkins 
             forcePull(false)
             forceTag(false)
             createFingerprints(false)

@@ -8,7 +8,7 @@ node {
   ])
 
   // job
-  try {
+  try {             // potrzebujemy tej sekcji by zareagować na błąd budowania - tu sztucznie wymuszony
     stage('build') {
       println('so far so good...')
     }
@@ -26,8 +26,8 @@ node {
     // send email
     if(to != null && !to.isEmpty()) {
       emailext(body: content, mimeType: 'text/html',
-         replyTo: '$DEFAULT_REPLYTO', subject: subject,
-         to: to, attachLog: true )
+         replyTo: '$DEFAULT_REPLYTO', subject: subject,   // używa pola replyto zdefinowanego w globalnej konfiguracji Jenkinsa
+         to: to, attachLog: true )    // adresaci są zdefiniowani na początku skryptu
     }
 
     // mark current build as a failure and throw the error
